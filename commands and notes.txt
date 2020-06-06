@@ -1,0 +1,103 @@
+default mnemonic candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
+
+
+function access specifier
+public - can be access publically
+view - only reads(free)
+pure - no reads no writes(can be used for calculations)(free)
+
+To deploy Contracts - truffle migrate --compile-all --reset --network name_of_network
+To get Account Add - web3.eth.accounts || web3.eth.coinbase (first account - used for mining)
+To start Console - truffle console --network name_of_network
+To start Log - truffle develop --network name_of_network --log
+To Get Balance in Ether - web3.fromWei(web3.eth.getBalance(web3.eth.accounts[1]),"ether").toNumber()
+To get instance of Contract to use its functions - contract_name.deployed().then(function(instance){app=instance;})
+To send ethers -  web3.eth.sendTransaction({from: from_account_address, to: to_account_address, value:web3.toWei(no_of_ethers, "ether")})
+
+Testing Stratergy - JavaScript
+Mocha - JavaScript Testing Framework
+Chai - behavior driven development insertion lib
+Test 1 - test case that will ensure that all the state variables are properly initiated when the smart contract is first deployed.
+
+Web3 is a script library used as a connector between your front end application and the etheruem node.
+To establish this link it is required to bind 3 to a provider(metamask does this on its own)
+
+Truffle 
+Net ID = 4447
+RPC = 9545
+Ganache 
+Net ID = 5777
+RPC = 7545
+
+migrations folder contains logic for deployement of Contracts
+Web3 is a script library used as a connector between your front end application and the etheruem node.
+To establish this link it is required to bind 3 to a provider if you open the front application with
+the Metamask extension enabled an instance of web3 will be injected into the window object of your
+webpage.In all other situations you will have to define the address of HTTP provider hosting etheruem node.
+
+
+Events in Solidity
+use keyword event followed by parameters
+instance.name_of_event({},{}).watch()
+
+first is filter
+second is range
+    fromBlock,
+    toBlock
+watch() is triggered after event occurs
+
+3 step de cycle
+    add features
+    test additional features by interacting with contract by truffle console
+    deploy to ganache and make front end
+
+    but every onve in a while, use private nodes
+
+Note -When there is no FROM address mentioned in truffled or Jesus or in migration scripts the Coinbase accounts.
+That is the first account undernote is used to deploy contracts by default.
+
+Payable means fund transfer can be happpen 
+Fours ways to inturrpt contract execution
+  throw
+  assert
+  require
+  revert
+
+  for all the above the following things happen if failed
+  1. value gets refunded to caller
+  2. changes to state variable is reverted
+  3. function is inturrpted
+  4. gas up to the point is not given back
+  5. opcode is returned
+  makes contract functions atomic
+
+  throw = has backward compatibility
+  assert = checks internal errors - use to find bugs in code
+  require = used for pre conditions
+  revert = finally revert is there to imperatively interrupt the functions execution when the condition to do so is more sophisticated than a precondition.
+
+  the address type has two methods to send you to an account. There's the send function and the transfer function and that's the one we are using here. Sellar is an address and we're calling the transfer function on it.
+The send function returns true or false depending on whether the value transfer worked or not.
+So it is your responsibility to check the return value and take the appropriate measures including calling
+revert if necessary transfer was added recently to the solidity language and it automatically throws
+a revert style exception in your contract.
+
+ethereum has two types of accounts
+external accounts useed by humasns
+contract accounts used by contracts 
+    And when you attach value to a transaction calling a payable function on a contract you are effectively
+    transferring cryptocurrency from the balance of the sender to the balance of the corresponding contract.
+    And then any code of a contract can spin you from its balance by sending or transferring it to another
+    account or keep it for later.
+
+Deactivating Contracts
+    Negative Fee for Deactivating contracts
+
+    selfdestruct(address)
+    address is the one where contract funds are sent to before being destroyed
+
+
+Function Modifier
+function modifier is a portion of reusable code that can be called prior to the execution of any function a function modifier
+helps to simplify your code by factoring out some verifications you might want to do before several
+functions in a contract.
